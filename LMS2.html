@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Hospital Patient Appointment Management Website">
+    <title>Hospital Appointment Management</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header, footer {
+            background-color: #164b75;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #dcebf5;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #123b5b;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section, aside {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        article {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]),
+        select, textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            margin-top: 15px;
+            padding: 12px;
+        }
+
+        fieldset label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        button {
+            background-color: #164b75;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0b304d;
+        }
+
+        :focus-visible {
+            outline: 3px solid #b45309;
+            outline-offset: 3px;
+        }
+
+        #message {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Hospital Patient Appointment Management</h1>
+        <p>Quality Healthcare for Everyone</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointment">Appointment</a>
+    </nav>
+
+    <main id="home">
+
+        <section aria-labelledby="welcome-title">
+            <h2 id="welcome-title">Welcome to Our Hospital</h2>
+            <p>
+                We provide quality medical services
+                and convenient appointment booking.
+            </p>
+        </section>
+
+        <section id="services"
+                 aria-labelledby="services-title">
+            <h2 id="services-title">Hospital Services</h2>
+
+            <article>
+                <h3>General Medicine</h3>
+                <p>
+                    Consultation and treatment for
+                    common health problems.
+                </p>
+            </article>
+
+            <article>
+                <h3>Cardiology</h3>
+                <p>
+                    Specialized care for heart-related
+                    conditions.
+                </p>
+            </article>
+
+            <article>
+                <h3>Orthopedics</h3>
+                <p>
+                    Diagnosis and treatment of bone
+                    and joint problems.
+                </p>
+            </article>
+        </section>
+
+        <section id="doctors"
+                 aria-labelledby="doctors-title">
+            <h2 id="doctors-title">Our Doctors</h2>
+
+            <article>
+                <h3>Dr. Ravi Kumar</h3>
+                <p>Department: General Medicine</p>
+                <p>Experience: 10 Years</p>
+            </article>
+
+            <article>
+                <h3>Dr. Priya Sharma</h3>
+                <p>Department: Cardiology</p>
+                <p>Experience: 8 Years</p>
+            </article>
+
+            <article>
+                <h3>Dr. Arun Reddy</h3>
+                <p>Department: Orthopedics</p>
+                <p>Experience: 12 Years</p>
+            </article>
+        </section>
+
+        <section id="appointment"
+                 aria-labelledby="appointment-title">
+
+            <h2 id="appointment-title">
+                Patient Appointment Form
+            </h2>
+
+            <p>Fields marked * are required.</p>
+
+            <form id="appointmentForm">
+
+                <label for="patientName">
+                    Patient Name *
+                </label>
+                <input type="text"
+                       id="patientName"
+                       name="patientName"
+                       autocomplete="name"
+                       required>
+
+                <label for="patientAge">
+                    Patient Age *
+                </label>
+                <input type="number"
+                       id="patientAge"
+                       name="patientAge"
+                       min="1"
+                       max="120"
+                       required>
+
+                <label for="patientEmail">
+                    Email Address *
+                </label>
+                <input type="email"
+                       id="patientEmail"
+                       name="patientEmail"
+                       autocomplete="email"
+                       required>
+
+                <label for="patientPhone">
+                    Phone Number *
+                </label>
+                <input type="tel"
+                       id="patientPhone"
+                       name="patientPhone"
+                       autocomplete="tel"
+                       pattern="[0-9]{10}"
+                       title="Enter a 10-digit phone number"
+                       required>
+
+                <label for="department">
+                    Select Department *
+                </label>
+                <select id="department"
+                        name="department"
+                        required>
+                    <option value="">
+                        Choose Department
+                    </option>
+                    <option value="general">
+                        General Medicine
+                    </option>
+                    <option value="cardiology">
+                        Cardiology
+                    </option>
+                    <option value="orthopedics">
+                        Orthopedics
+                    </option>
+                </select>
+
+                <label for="doctor">
+                    Select Doctor *
+                </label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">Choose Doctor</option>
+                    <option value="ravi">
+                        Dr. Ravi Kumar
+                    </option>
+                    <option value="priya">
+                        Dr. Priya Sharma
+                    </option>
+                    <option value="arun">
+                        Dr. Arun Reddy
+                    </option>
+                </select>
+
+                <label for="appointmentDate">
+                    Appointment Date *
+                </label>
+                <input type="date"
+                       id="appointmentDate"
+                       name="appointmentDate"
+                       required>
+
+                <fieldset>
+                    <legend>Preferred Time *</legend>
+
+                    <input type="radio"
+                           id="morning"
+                           name="time"
+                           value="morning"
+                           required>
+                    <label for="morning">Morning</label>
+
+                    <input type="radio"
+                           id="afternoon"
+                           name="time"
+                           value="afternoon">
+                    <label for="afternoon">Afternoon</label>
+
+                    <input type="radio"
+                           id="evening"
+                           name="time"
+                           value="evening">
+                    <label for="evening">Evening</label>
+                </fieldset>
+
+                <label for="symptoms">
+                    Symptoms / Reason for Visit
+                </label>
+                <textarea id="symptoms"
+                          name="symptoms"
+                          rows="4"></textarea>
+
+                <div>
+                    <input type="checkbox"
+                           id="consent"
+                           name="consent"
+                           required>
+                    <label for="consent">
+                        I confirm that the details
+                        provided are correct. *
+                    </label>
+                </div>
+
+                <button type="submit">
+                    Book Appointment
+                </button>
+
+                <p id="message"
+                   role="status"
+                   aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <aside aria-labelledby="notice-title">
+            <h2 id="notice-title">Important Notice</h2>
+            <p>
+                Please arrive 15 minutes before
+                your scheduled appointment.
+            </p>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hospital Appointment Management</p>
+        <p>All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById(
+            "appointmentForm"
+        );
+
+        const dateInput = document.getElementById(
+            "appointmentDate"
+        );
+
+        function localDateString(date) {
+            const year = date.getFullYear();
+            const month = String(
+                date.getMonth() + 1
+            ).padStart(2, "0");
+            const day = String(
+                date.getDate()
+            ).padStart(2, "0");
+
+            return `${year}-${month}-${day}`;
+        }
+
+        dateInput.min = localDateString(new Date());
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!form.reportValidity()) {
+                return;
+            }
+
+            const selectedDate = dateInput.value;
+
+            if (selectedDate < localDateString(new Date())) {
+                dateInput.setCustomValidity(
+                    "Please select today or a future date."
+                );
+                dateInput.reportValidity();
+                return;
+            }
+
+            document.getElementById("message")
+                .textContent =
+                "Appointment request submitted successfully " +
+                "(Demo only - no booking was saved).";
+        });
+
+        dateInput.addEventListener("input", function() {
+            dateInput.setCustomValidity("");
+        });
+    </script>
+
+</body>
+</html>
