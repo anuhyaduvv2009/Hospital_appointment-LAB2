@@ -188,9 +188,12 @@
                 Patient Appointment Form
             </h2>
 
-            <p>Fields marked * are required.</p>
+           <p id="formInstructions">
+    Please complete all required fields marked with *.
+</p>
 
-            <form id="appointmentForm">
+           <form id="appointmentForm"
+      aria-describedby="formInstructions">
 
                 <label for="patientName">
                     Patient Name *
@@ -395,3 +398,4 @@
 
 </body>
 </html>
+
